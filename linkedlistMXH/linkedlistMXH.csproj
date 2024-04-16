@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -145,6 +146,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\data.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nnn.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nnn1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nnn2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piechart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\column chart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

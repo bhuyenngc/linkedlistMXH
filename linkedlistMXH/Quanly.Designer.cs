@@ -238,9 +238,10 @@
             // 
             // dtpngayDang
             // 
+            this.dtpngayDang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpngayDang.Location = new System.Drawing.Point(700, 95);
             this.dtpngayDang.Name = "dtpngayDang";
-            this.dtpngayDang.Size = new System.Drawing.Size(316, 22);
+            this.dtpngayDang.Size = new System.Drawing.Size(316, 27);
             this.dtpngayDang.TabIndex = 10;
             // 
             // btnSuaBaiDang
@@ -298,7 +299,6 @@
             // 
             this.panel1.BackgroundImage = global::linkedlistMXH.Properties.Resources.nè_he;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtNoiDungBaiDang);
             this.panel1.Controls.Add(this.btnThem);
@@ -510,7 +510,7 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // Quanly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -520,7 +520,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.Name = "Quanly";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bài Đăng";
             this.Load += new System.EventHandler(this.Form1_Load);
