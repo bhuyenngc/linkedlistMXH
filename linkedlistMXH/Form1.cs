@@ -38,6 +38,22 @@ namespace linkedlistMXH
             conn.Open();
             HienThi();
         }
+        private Form currentFormChild;
+        private void OpenChildForm(Form childForm)
+        {
+            if (currentFormChild != null)
+            {
+                currentFormChild.Close();
+            }
+            currentFormChild = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel1.Controls.Add(childForm);
+            panel1.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
 
         private void HienThi()
         {
@@ -153,6 +169,26 @@ namespace linkedlistMXH
                 txtTacGia.Text = dgvbaiDang.Rows[index].Cells["tacGia"].Value.ToString();
                 dtpngayDang.Text = dgvbaiDang.Rows[index].Cells["ngayDang"].Value.ToString();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Form2());
+            label5.Text = button1.Text;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (currentFormChild != null)
+            {
+                currentFormChild.Close();
+            }
+            label5.Text = button2.Text;
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
