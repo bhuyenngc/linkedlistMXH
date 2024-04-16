@@ -1,6 +1,6 @@
 ﻿namespace linkedlistMXH
 {
-    partial class Form1
+    partial class Quanly
     {
         /// <summary>
         /// Required designer variable.

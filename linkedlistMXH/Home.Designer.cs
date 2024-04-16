@@ -1,6 +1,6 @@
 ﻿namespace linkedlistMXH
 {
-    partial class Form2
+    partial class Home
     {
         /// <summary>
         /// Required designer variable.

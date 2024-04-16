@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace linkedlistMXH
 {
-    public partial class Form1 : Form
+    public partial class Quanly : Form
     {
         string strConn = @"Data Source=LAPTOP-02MQR8KD;Initial Catalog=quanLyBaiDangMXH;Integrated Security=True";
         SqlConnection conn = null;
@@ -26,7 +26,7 @@ namespace linkedlistMXH
             public string ngayDang { get; set; }
         }
 
-        public Form1()
+        public Quanly()
         {
             InitializeComponent();
             posts = new LinkedList<Post>();
@@ -173,7 +173,7 @@ namespace linkedlistMXH
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Form2());
+            OpenChildForm(new Home());
             label5.Text = button1.Text;
         }
 
