@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace linkedlistMXH
 {
@@ -168,6 +169,7 @@ namespace linkedlistMXH
                 txtNoiDungBaiDang.Text = dgvbaiDang.Rows[index].Cells["noiDungBaiDang"].Value.ToString();
                 txtTacGia.Text = dgvbaiDang.Rows[index].Cells["tacGia"].Value.ToString();
                 dtpngayDang.Text = dgvbaiDang.Rows[index].Cells["ngayDang"].Value.ToString();
+                
             }
         }
 
@@ -189,6 +191,28 @@ namespace linkedlistMXH
         private void label5_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openfile = new OpenFileDialog();
+            PictureBox pt = new PictureBox();
+            int r = dgvbaiDang.CurrentCell.RowIndex;
+            openfile.Filter = "Image Files |*.gif;*.png;*.jpg;*.bmp;*.wmf;*.png";
+            if (openfile.ShowDialog() == DialogResult.OK)
+            {
+                pt.Image = new Bitmap(openfile.FileName);
+                MemoryStream mmst = new MemoryStream();
+                pt.Image.Save(mmst, pt.Image.RawFormat);
+                dgvbaiDang.Rows[r].Cells["Hình ảnh"].Value = mmst.ToArray();
+            }
+            else dgvbaiDang.Rows[r].Cells["Hình ảnh"].Value = DBNull.Value;
+
         }
     }
 }

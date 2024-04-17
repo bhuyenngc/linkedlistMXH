@@ -36,10 +36,6 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvbaiDang = new System.Windows.Forms.DataGridView();
-            this.PostID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noiDungBaiDang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngayDang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPostID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,6 +45,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -66,6 +63,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.PostID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noiDungBaiDang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayDang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbaiDang)).BeginInit();
             this.panel1.SuspendLayout();
@@ -174,38 +176,6 @@
             this.dgvbaiDang.TabIndex = 0;
             this.dgvbaiDang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbaiDang_CellClick);
             // 
-            // PostID
-            // 
-            this.PostID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PostID.DataPropertyName = "PostID";
-            this.PostID.HeaderText = "PostID";
-            this.PostID.MinimumWidth = 6;
-            this.PostID.Name = "PostID";
-            // 
-            // noiDungBaiDang
-            // 
-            this.noiDungBaiDang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.noiDungBaiDang.DataPropertyName = "noiDungBaiDang";
-            this.noiDungBaiDang.HeaderText = "Nội Dung Bài Đăng";
-            this.noiDungBaiDang.MinimumWidth = 6;
-            this.noiDungBaiDang.Name = "noiDungBaiDang";
-            // 
-            // tacGia
-            // 
-            this.tacGia.DataPropertyName = "tacGia";
-            this.tacGia.HeaderText = "Tác Giả";
-            this.tacGia.MinimumWidth = 6;
-            this.tacGia.Name = "tacGia";
-            this.tacGia.Width = 125;
-            // 
-            // ngayDang
-            // 
-            this.ngayDang.DataPropertyName = "ngayDang";
-            this.ngayDang.HeaderText = "Ngày Đăng";
-            this.ngayDang.MinimumWidth = 6;
-            this.ngayDang.Name = "ngayDang";
-            this.ngayDang.Width = 125;
-            // 
             // txtPostID
             // 
             this.txtPostID.Location = new System.Drawing.Point(169, 24);
@@ -299,6 +269,7 @@
             // 
             this.panel1.BackgroundImage = global::linkedlistMXH.Properties.Resources.nè_he;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtNoiDungBaiDang);
             this.panel1.Controls.Add(this.btnThem);
@@ -315,6 +286,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1208, 843);
             this.panel1.TabIndex = 15;
+            // 
+            // button8
+            // 
+            this.button8.Image = global::linkedlistMXH.Properties.Resources.image;
+            this.button8.Location = new System.Drawing.Point(1022, 24);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(42, 35);
+            this.button8.TabIndex = 13;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // panel2
             // 
@@ -510,6 +491,44 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // PostID
+            // 
+            this.PostID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.PostID.DataPropertyName = "PostID";
+            this.PostID.HeaderText = "PostID";
+            this.PostID.MinimumWidth = 6;
+            this.PostID.Name = "PostID";
+            this.PostID.Width = 76;
+            // 
+            // noiDungBaiDang
+            // 
+            this.noiDungBaiDang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.noiDungBaiDang.DataPropertyName = "noiDungBaiDang";
+            this.noiDungBaiDang.HeaderText = "Nội Dung Bài Đăng";
+            this.noiDungBaiDang.MinimumWidth = 6;
+            this.noiDungBaiDang.Name = "noiDungBaiDang";
+            // 
+            // tacGia
+            // 
+            this.tacGia.DataPropertyName = "tacGia";
+            this.tacGia.HeaderText = "Tác Giả";
+            this.tacGia.MinimumWidth = 6;
+            this.tacGia.Name = "tacGia";
+            this.tacGia.Width = 125;
+            // 
+            // ngayDang
+            // 
+            this.ngayDang.DataPropertyName = "ngayDang";
+            this.ngayDang.HeaderText = "Ngày Đăng";
+            this.ngayDang.MinimumWidth = 6;
+            this.ngayDang.Name = "ngayDang";
+            this.ngayDang.Width = 125;
+            // 
             // Quanly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -577,12 +596,14 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.DataGridViewTextBoxColumn PostID;
         private System.Windows.Forms.DataGridViewTextBoxColumn noiDungBaiDang;
         private System.Windows.Forms.DataGridViewTextBoxColumn tacGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayDang;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }
 
