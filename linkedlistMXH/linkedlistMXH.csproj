@@ -47,11 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Quanly.cs">
+    <Compile Include="QuanlyMXH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quanly.Designer.cs">
-      <DependentUpon>Quanly.cs</DependentUpon>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>QuanlyMXH.cs</DependentUpon>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -61,8 +62,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Quanly.resx">
-      <DependentUpon>Quanly.cs</DependentUpon>
+    <EmbeddedResource Include="QuanlyMXH.resx">
+      <DependentUpon>QuanlyMXH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
