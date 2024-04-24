@@ -198,7 +198,7 @@ namespace linkedlistMXH
 
         }
 
-        private void addimage_Click(object sender, EventArgs e)
+        private void btnaddimage_Click(object sender, EventArgs e)
         {
             OpenFileDialog openfile = new OpenFileDialog();
             PictureBox pt = new PictureBox();

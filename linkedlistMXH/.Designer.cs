@@ -49,7 +49,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.addimage = new System.Windows.Forms.Button();
+            this.btnaddimage = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -302,7 +302,7 @@
             // 
             this.panel1.BackgroundImage = global::linkedlistMXH.Properties.Resources.nè_he;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.addimage);
+            this.panel1.Controls.Add(this.btnaddimage);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtNoiDungBaiDang);
             this.panel1.Controls.Add(this.btnThem);
@@ -320,15 +320,15 @@
             this.panel1.Size = new System.Drawing.Size(1208, 843);
             this.panel1.TabIndex = 15;
             // 
-            // addimage
+            // btnaddimage
             // 
-            this.addimage.Image = global::linkedlistMXH.Properties.Resources.image;
-            this.addimage.Location = new System.Drawing.Point(1022, 24);
-            this.addimage.Name = "addimage";
-            this.addimage.Size = new System.Drawing.Size(42, 35);
-            this.addimage.TabIndex = 13;
-            this.addimage.UseVisualStyleBackColor = true;
-            this.addimage.Click += new System.EventHandler(this.addimage_Click);
+            this.btnaddimage.Image = global::linkedlistMXH.Properties.Resources.image;
+            this.btnaddimage.Location = new System.Drawing.Point(1022, 24);
+            this.btnaddimage.Name = "btnaddimage";
+            this.btnaddimage.Size = new System.Drawing.Size(42, 35);
+            this.btnaddimage.TabIndex = 13;
+            this.btnaddimage.UseVisualStyleBackColor = true;
+            this.btnaddimage.Click += new System.EventHandler(this.btnaddimage_Click);
             // 
             // panel2
             // 
@@ -600,7 +600,7 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button addimage;
+        private System.Windows.Forms.Button btnaddimage;
         private System.Windows.Forms.DataGridViewTextBoxColumn PostID;
         private System.Windows.Forms.DataGridViewTextBoxColumn noiDungBaiDang;
         private System.Windows.Forms.DataGridViewTextBoxColumn tacGia;
