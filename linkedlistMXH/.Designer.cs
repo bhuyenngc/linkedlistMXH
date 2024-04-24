@@ -36,6 +36,10 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvbaiDang = new System.Windows.Forms.DataGridView();
+            this.PostID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noiDungBaiDang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayDang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPostID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -64,10 +68,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.PostID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noiDungBaiDang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngayDang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbaiDang)).BeginInit();
             this.panel1.SuspendLayout();
@@ -175,6 +175,39 @@
             this.dgvbaiDang.Size = new System.Drawing.Size(854, 547);
             this.dgvbaiDang.TabIndex = 0;
             this.dgvbaiDang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbaiDang_CellClick);
+            // 
+            // PostID
+            // 
+            this.PostID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.PostID.DataPropertyName = "PostID";
+            this.PostID.HeaderText = "PostID";
+            this.PostID.MinimumWidth = 6;
+            this.PostID.Name = "PostID";
+            this.PostID.Width = 76;
+            // 
+            // noiDungBaiDang
+            // 
+            this.noiDungBaiDang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.noiDungBaiDang.DataPropertyName = "noiDungBaiDang";
+            this.noiDungBaiDang.HeaderText = "Nội Dung Bài Đăng";
+            this.noiDungBaiDang.MinimumWidth = 6;
+            this.noiDungBaiDang.Name = "noiDungBaiDang";
+            // 
+            // tacGia
+            // 
+            this.tacGia.DataPropertyName = "tacGia";
+            this.tacGia.HeaderText = "Tác Giả";
+            this.tacGia.MinimumWidth = 6;
+            this.tacGia.Name = "tacGia";
+            this.tacGia.Width = 125;
+            // 
+            // ngayDang
+            // 
+            this.ngayDang.DataPropertyName = "ngayDang";
+            this.ngayDang.HeaderText = "Ngày Đăng";
+            this.ngayDang.MinimumWidth = 6;
+            this.ngayDang.Name = "ngayDang";
+            this.ngayDang.Width = 125;
             // 
             // txtPostID
             // 
@@ -490,44 +523,12 @@
             this.pictureBox1.Size = new System.Drawing.Size(183, 70);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
-            // PostID
-            // 
-            this.PostID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.PostID.DataPropertyName = "PostID";
-            this.PostID.HeaderText = "PostID";
-            this.PostID.MinimumWidth = 6;
-            this.PostID.Name = "PostID";
-            this.PostID.Width = 76;
-            // 
-            // noiDungBaiDang
-            // 
-            this.noiDungBaiDang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.noiDungBaiDang.DataPropertyName = "noiDungBaiDang";
-            this.noiDungBaiDang.HeaderText = "Nội Dung Bài Đăng";
-            this.noiDungBaiDang.MinimumWidth = 6;
-            this.noiDungBaiDang.Name = "noiDungBaiDang";
-            // 
-            // tacGia
-            // 
-            this.tacGia.DataPropertyName = "tacGia";
-            this.tacGia.HeaderText = "Tác Giả";
-            this.tacGia.MinimumWidth = 6;
-            this.tacGia.Name = "tacGia";
-            this.tacGia.Width = 125;
-            // 
-            // ngayDang
-            // 
-            this.ngayDang.DataPropertyName = "ngayDang";
-            this.ngayDang.HeaderText = "Ngày Đăng";
-            this.ngayDang.MinimumWidth = 6;
-            this.ngayDang.Name = "ngayDang";
-            this.ngayDang.Width = 125;
             // 
             // Quanly
             // 
@@ -604,6 +605,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn noiDungBaiDang;
         private System.Windows.Forms.DataGridViewTextBoxColumn tacGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayDang;
+
+        private void pictureBox1_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
 

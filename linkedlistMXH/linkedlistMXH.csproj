@@ -62,6 +62,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include=".Designer.resx">
+      <DependentUpon>.Designer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanlyMXH.resx">
       <DependentUpon>QuanlyMXH.cs</DependentUpon>
     </EmbeddedResource>
