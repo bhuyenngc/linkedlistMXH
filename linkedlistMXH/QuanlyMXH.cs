@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace linkedlistMXH
 {
@@ -198,20 +199,9 @@ namespace linkedlistMXH
 
         }
 
-        private void btnaddimage_Click(object sender, EventArgs e)
+       
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            OpenFileDialog openfile = new OpenFileDialog();
-            PictureBox pt = new PictureBox();
-            int r = dgvbaiDang.CurrentCell.RowIndex;
-            openfile.Filter = "Image Files |*.gif;*.png;*.jpg;*.bmp;*.wmf;*.png";
-            if (openfile.ShowDialog() == DialogResult.OK)
-            {
-                pt.Image = new Bitmap(openfile.FileName);
-                MemoryStream mmst = new MemoryStream();
-                pt.Image.Save(mmst, pt.Image.RawFormat);
-                dgvbaiDang.Rows[r].Cells["Hình ảnh"].Value = mmst.ToArray();
-            }
-            else dgvbaiDang.Rows[r].Cells["Hình ảnh"].Value = DBNull.Value;
 
         }
     }
