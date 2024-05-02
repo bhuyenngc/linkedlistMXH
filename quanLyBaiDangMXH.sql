@@ -7,5 +7,3 @@ CREATE TABLE baiDang (
     tacGia NVARCHAR(100),
     ngayDang NVARCHAR(100),
 );
-ALTER TABLE baiDang ADD hinhanh Image
-sp_rename 'baiDang.hinhanh' , N'Hình ảnh', 'COLUMN';
