@@ -94,15 +94,7 @@ namespace linkedlistMXH
                 }
             }
 
-                public IEnumerable<string> GetAllPosts()
-            {
-                Node current = head;
-                while (current != null)
-                {
-                    yield return current.Data;
-                    current = current.Next;
-                }
-            }
+                
         }
     }
 }
