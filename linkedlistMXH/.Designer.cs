@@ -36,6 +36,10 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvbaiDang = new System.Windows.Forms.DataGridView();
+            this.PostID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noiDungBaiDang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayDang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPostID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -63,10 +67,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.PostID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noiDungBaiDang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngayDang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbaiDang)).BeginInit();
             this.panel1.SuspendLayout();
@@ -175,6 +175,38 @@
             this.dgvbaiDang.TabIndex = 0;
             this.dgvbaiDang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbaiDang_CellClick);
             // 
+            // PostID
+            // 
+            this.PostID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PostID.DataPropertyName = "PostID";
+            this.PostID.HeaderText = "PostID";
+            this.PostID.MinimumWidth = 6;
+            this.PostID.Name = "PostID";
+            // 
+            // noiDungBaiDang
+            // 
+            this.noiDungBaiDang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.noiDungBaiDang.DataPropertyName = "noiDungBaiDang";
+            this.noiDungBaiDang.HeaderText = "Nội Dung Bài Đăng";
+            this.noiDungBaiDang.MinimumWidth = 6;
+            this.noiDungBaiDang.Name = "noiDungBaiDang";
+            // 
+            // tacGia
+            // 
+            this.tacGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tacGia.DataPropertyName = "tacGia";
+            this.tacGia.HeaderText = "Tác Giả";
+            this.tacGia.MinimumWidth = 6;
+            this.tacGia.Name = "tacGia";
+            // 
+            // ngayDang
+            // 
+            this.ngayDang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ngayDang.DataPropertyName = "ngayDang";
+            this.ngayDang.HeaderText = "Ngày Đăng";
+            this.ngayDang.MinimumWidth = 6;
+            this.ngayDang.Name = "ngayDang";
+            // 
             // txtPostID
             // 
             this.txtPostID.Location = new System.Drawing.Point(169, 24);
@@ -250,7 +282,7 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
             // 
@@ -262,7 +294,7 @@
             this.button2.TabIndex = 14;
             this.button2.Text = "Quản lý";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // panel1
             // 
@@ -284,7 +316,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1208, 843);
             this.panel1.TabIndex = 15;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
@@ -349,7 +380,6 @@
             this.label5.Size = new System.Drawing.Size(87, 25);
             this.label5.TabIndex = 0;
             this.label5.Text = "Quản lý";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // panel3
             // 
@@ -484,39 +514,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
-            // PostID
-            // 
-            this.PostID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PostID.DataPropertyName = "PostID";
-            this.PostID.HeaderText = "PostID";
-            this.PostID.MinimumWidth = 6;
-            this.PostID.Name = "PostID";
-            // 
-            // noiDungBaiDang
-            // 
-            this.noiDungBaiDang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.noiDungBaiDang.DataPropertyName = "noiDungBaiDang";
-            this.noiDungBaiDang.HeaderText = "Nội Dung Bài Đăng";
-            this.noiDungBaiDang.MinimumWidth = 6;
-            this.noiDungBaiDang.Name = "noiDungBaiDang";
-            // 
-            // tacGia
-            // 
-            this.tacGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tacGia.DataPropertyName = "tacGia";
-            this.tacGia.HeaderText = "Tác Giả";
-            this.tacGia.MinimumWidth = 6;
-            this.tacGia.Name = "tacGia";
-            // 
-            // ngayDang
-            // 
-            this.ngayDang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ngayDang.DataPropertyName = "ngayDang";
-            this.ngayDang.HeaderText = "Ngày Đăng";
-            this.ngayDang.MinimumWidth = 6;
-            this.ngayDang.Name = "ngayDang";
             // 
             // Quanly
             // 
@@ -531,7 +528,6 @@
             this.Name = "Quanly";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bài Đăng";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvbaiDang)).EndInit();
             this.panel1.ResumeLayout(false);
