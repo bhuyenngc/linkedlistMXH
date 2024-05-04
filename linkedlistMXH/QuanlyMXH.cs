@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Windows.Forms.DataVisualization.Charting;
 using static linkedlistMXH.Program;
+using static linkedlistMXH.Quanly;
+using static System.Net.WebRequestMethods;
 
 namespace linkedlistMXH
 {
@@ -24,14 +26,15 @@ namespace linkedlistMXH
             public string tacGia { get; set; }
             public string ngayDang { get; set; }
         }
-       
+
+
+        private MyLinkedList linkedList;
 
         public Quanly()
         {
             InitializeComponent();
-            posts = new LinkedList<Post>();
+            linkedList = new MyLinkedList();
         }
-
         private void HienThi()
         {
             DataTable dt = new DataTable();
@@ -40,10 +43,11 @@ namespace linkedlistMXH
             dt.Columns.Add("tacGia");
             dt.Columns.Add("ngayDang");
 
-            foreach (Post post in posts)
+            foreach (Post post in linkedList.GetAllPosts())
             {
                 dt.Rows.Add(post.PostID, post.noiDungBaiDang, post.tacGia, post.ngayDang);
             }
+
 
             dgvbaiDang.DataSource = dt;
         }
@@ -85,10 +89,11 @@ namespace linkedlistMXH
                 };
 
                 // Thêm vào linkedList
-                posts.AddLast(newPost);
+                linkedList.AddLast(newPost);
                 HienThi();
             }
         }
+        
 
         private void btnSuaBaiDang_Click(object sender, EventArgs e)
         {
@@ -100,15 +105,7 @@ namespace linkedlistMXH
             else
             {
                 // Sửa trong linkedList
-                foreach (Post post in posts)
-                {
-                    if (post.PostID == txtPostID.Text)
-                    {
-                        post.noiDungBaiDang = txtNoiDungBaiDang.Text;
-                        post.tacGia = txtTacGia.Text;
-                        post.ngayDang = dtpngayDang.Value.ToString();
-                    }
-                }
+                linkedList.EditPost(txtPostID.Text, txtNoiDungBaiDang.Text);
                 HienThi();
             }
         }
@@ -123,17 +120,11 @@ namespace linkedlistMXH
             else
             {
                 // Xóa trong linkedList
-                foreach (Post post in posts)
-                {
-                    if (post.PostID == txtPostID.Text)
-                    {
-                        posts.Remove(post);
-                        break;
-                    }
-                }
+                linkedList.DeletePost(txtPostID.Text);
                 HienThi();
             }
         }
+        
 
         private void dgvbaiDang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -147,7 +138,7 @@ namespace linkedlistMXH
 
             }
         }
-
+        
         private void btnThoat_Click(object sender, EventArgs e)
         {
            
@@ -169,6 +160,91 @@ namespace linkedlistMXH
             }
             label5.Text = button2.Text;
         }
+        public class MyLinkedList
+        {
+            private MyNode head;
+
+            public void AddLast(Post data)
+            {
+                MyNode newNode = new MyNode(data);
+                if (head == null)
+                {
+                    head = newNode;
+                }
+                else
+                {
+                    MyNode current = head;
+                    while (current.Next != null)
+                    {
+                        current = current.Next;
+                    }
+                    current.Next = newNode;
+                }
+            }
+            public void EditPost(string postID, string newData)
+            {
+                MyNode current = head;
+                while (current != null)
+                {
+                    if (current.Data.PostID == postID)
+                    {
+                        current.Data.noiDungBaiDang = newData;
+                        // Nếu bạn muốn sửa các trường khác (như tacGia, ngayDang), thực hiện tương tự ở đây
+                        break;
+                    }
+                    current = current.Next;
+                }
+            }
+
+            public void DeletePost(string postID)
+            {
+                if (head == null)
+                    return;
+
+                if (head.Data.PostID == postID)
+                {
+                    head = head.Next;
+                    return;
+                }
+
+                MyNode current = head;
+                MyNode previous = null;
+                while (current != null && current.Data.PostID != postID)
+                {
+                    previous = current;
+                    current = current.Next;
+                }
+
+                if (current != null)
+                {
+                    previous.Next = current.Next;
+                }
+            }
+
+            public IEnumerable<Post> GetAllPosts()
+            {
+                MyNode current = head;
+                while (current != null)
+                {
+                    yield return current.Data;
+                    current = current.Next;
+                }
+            }
+
+        }
+
+        public class MyNode
+        {
+            public Post Data { get; set; }
+            public MyNode Next { get; set; }
+
+            public MyNode(Post data)
+            {
+                Data = data;
+                Next = null;
+            }
+        }
+
     }
 }
    
